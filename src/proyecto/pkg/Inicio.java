@@ -6,6 +6,7 @@
 package proyecto.pkg;
 import Conex.Conexion;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.sql.SQLException;
@@ -44,9 +45,9 @@ Conexion c= new Conexion();
     }
     public void InsertarImagen(){
          //Imagen pantalla principal
-        ImageIcon fot1 = new ImageIcon("src/Imagenes/HG.jpeg");
-           Icon icono1 = new ImageIcon(fot1.getImage().getScaledInstance(this.jLabel1.getWidth(),this.jLabel1.getHeight(), Image.SCALE_DEFAULT));
-           this.jLabel1.setIcon(icono1);
+        //ImageIcon fot1 = new ImageIcon("src/Imagenes/HG.jpeg");
+           //Icon icono1 = new ImageIcon(fot1.getImage().getScaledInstance(this.jLabel1.getWidth(),this.jLabel1.getHeight(), Image.SCALE_DEFAULT));
+           //this.jLabel1.setIcon(icono1);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -57,8 +58,13 @@ Conexion c= new Conexion();
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        desktopPane = new javax.swing.JDesktopPane();
-        jLabel1 = new javax.swing.JLabel();
+        ImageIcon icon = new ImageIcon(getClass().getResource("/Imagenes/HG.jpeg"));
+        Image image = icon.getImage();
+        escritorio = new javax.swing.JDesktopPane(){
+            public void paintComponent(Graphics g){
+                g.drawImage(image,0,0,getWidth(),getHeight(),this);
+            }
+        };
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         saveMenuItem = new javax.swing.JMenuItem();
@@ -73,12 +79,16 @@ Conexion c= new Conexion();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        desktopPane.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Imagen");
-        desktopPane.add(jLabel1);
-        jLabel1.setBounds(80, 20, 580, 390);
+        javax.swing.GroupLayout escritorioLayout = new javax.swing.GroupLayout(escritorio);
+        escritorio.setLayout(escritorioLayout);
+        escritorioLayout.setHorizontalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        escritorioLayout.setVerticalGroup(
+            escritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 279, Short.MAX_VALUE)
+        );
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("Registro");
@@ -163,11 +173,11 @@ Conexion c= new Conexion();
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(escritorio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
+            .addComponent(escritorio)
         );
 
         pack();
@@ -176,58 +186,58 @@ Conexion c= new Conexion();
     private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_openMenuItemActionPerformed
         // TODO add your handling code here:
        Documento doc = new Documento();
-        desktopPane.removeAll();
-        desktopPane.repaint();
-        desktopPane.add(doc);
+        escritorio.removeAll();
+        escritorio.repaint();
+        escritorio.add(doc);
         
     }//GEN-LAST:event_openMenuItemActionPerformed
 
     private void cutMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cutMenuItemActionPerformed
         // TODO add your handling code here:
         IngresoR ingreso = new IngresoR();
-        desktopPane.removeAll();
-        desktopPane.repaint();
-        desktopPane.add(ingreso);
+        escritorio.removeAll();
+        escritorio.repaint();
+        escritorio.add(ingreso);
     }//GEN-LAST:event_cutMenuItemActionPerformed
 
     private void saveMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveMenuItemActionPerformed
         // TODO add your handling code here:
         Cuenta librador = new Cuenta();
-        desktopPane.removeAll();
-        desktopPane.repaint();
-        desktopPane.add(librador);
+        escritorio.removeAll();
+        escritorio.repaint();
+        escritorio.add(librador);
     }//GEN-LAST:event_saveMenuItemActionPerformed
 
     private void saveAsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveAsMenuItemActionPerformed
         // TODO add your handling code here:
         ServicioR gasto = new ServicioR();
-        desktopPane.removeAll();
-        desktopPane.repaint();
-        desktopPane.add(gasto);
+        escritorio.removeAll();
+        escritorio.repaint();
+        escritorio.add(gasto);
     }//GEN-LAST:event_saveAsMenuItemActionPerformed
 
     private void copyMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_copyMenuItemActionPerformed
         // TODO add your handling code here:
         EgresoR egreso = new EgresoR();
-        desktopPane.removeAll();
-        desktopPane.repaint();
-        desktopPane.add(egreso);
+        escritorio.removeAll();
+        escritorio.repaint();
+        escritorio.add(egreso);
     }//GEN-LAST:event_copyMenuItemActionPerformed
 
     private void contentMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contentMenuItemActionPerformed
         // TODO add your handling code here:
         ReporteI reporte = new ReporteI();
-       desktopPane.removeAll();
-        desktopPane.repaint();
-        desktopPane.add(reporte);
+       escritorio.removeAll();
+        escritorio.repaint();
+        escritorio.add(reporte);
     }//GEN-LAST:event_contentMenuItemActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
           ReporteE reporte = new ReporteE();
-       desktopPane.removeAll();
-        desktopPane.repaint();
-        desktopPane.add(reporte);
+       escritorio.removeAll();
+        escritorio.repaint();
+        escritorio.add(reporte);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
@@ -270,11 +280,10 @@ Conexion c= new Conexion();
     private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
-    private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu editMenu;
+    private javax.swing.JDesktopPane escritorio;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
