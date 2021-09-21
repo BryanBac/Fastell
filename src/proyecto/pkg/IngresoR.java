@@ -91,8 +91,10 @@ DefaultTableModel dtm;
 
         jPanel1.setBackground(new java.awt.Color(204, 255, 255));
 
+        jTextField2.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+
         jButton3.setBackground(new java.awt.Color(83, 153, 225));
-        jButton3.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jButton3.setText("Nuevo servicio");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,9 +102,12 @@ DefaultTableModel dtm;
             }
         });
 
-        jLabel8.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+
+        jLabel8.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel8.setText("Documento:");
 
+        jComboBox2.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
         jComboBox2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -115,10 +120,12 @@ DefaultTableModel dtm;
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
+        jTextField3.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+
+        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel3.setText("Cantidad:");
 
-        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel10.setText("Descripción del Servicio:");
 
         jTextArea1.setColumns(20);
@@ -127,12 +134,13 @@ DefaultTableModel dtm;
         jTextArea1.setRows(3);
         jScrollPane2.setViewportView(jTextArea1);
 
-        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel5.setText("Fecha:");
 
-        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel6.setText("No. de Documento:");
 
+        jComboBox3.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,15 +148,16 @@ DefaultTableModel dtm;
             }
         });
 
-        jLabel9.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel9.setText("Servicio:");
 
-        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel7.setText("Código:");
 
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jLabel1.setText("Nombre:");
 
+        jComboBox1.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,7 +165,9 @@ DefaultTableModel dtm;
             }
         });
 
-        jTable1.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
+        jDateChooser1.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+
+        jTable1.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -222,9 +233,9 @@ DefaultTableModel dtm;
                         .addComponent(jButton3))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton2)
-                        .addGap(206, 206, 206)
-                        .addComponent(jButton5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton5)
+                        .addGap(220, 220, 220)
                         .addComponent(jButton1))
                     .addComponent(jScrollPane1)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
@@ -246,7 +257,7 @@ DefaultTableModel dtm;
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 132, Short.MAX_VALUE)))
+                                .addComponent(jDateChooser1, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
