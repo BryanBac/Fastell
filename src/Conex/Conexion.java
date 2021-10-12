@@ -18,7 +18,7 @@ public class Conexion {
     public Connection con;
     private static final String driver="com.mysql.jdbc.Driver";
     private static final String user="root"; //esto no lo toquen, todo va a ser en root supongo, si alguien le colocó otro usuario pues cambienlo
-    private static final String pass="diegoalej."; //aquí tiene que ir su contra personal de la bd
+    private static final String pass="Tr4c30n"; //aquí tiene que ir su contra personal de la bd
     private static final String url="jdbc:mysql://localhost:3306/bd_contable";
     public ArrayList<String> lista= new ArrayList();
     public ArrayList<String> listaS= new ArrayList();
@@ -27,7 +27,7 @@ public class Conexion {
         try{
             Class.forName(driver);
             con= (Connection) DriverManager.getConnection(url, user, pass);
-            
+
             if (con!=null){
                 //JOptionPane.showMessageDialog(null, "Si enlazó");//esto pueden volverlo comentario
             }
