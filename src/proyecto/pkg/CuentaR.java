@@ -13,6 +13,11 @@ public class CuentaR {
      String Nombre;
     String Banco;
     String NoCuenta;
+    String Codigo;
+
+    public void setCodigo(String Codigo) {
+        this.Codigo = Codigo;
+    }
 
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
@@ -26,6 +31,10 @@ public class CuentaR {
         this.NoCuenta = NoCuenta;
     }
 
+    public String getCodigo() {
+        return Codigo;
+    }
+    
     public String getNombre() {
         return Nombre;
     }
