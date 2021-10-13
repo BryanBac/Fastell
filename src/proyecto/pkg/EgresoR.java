@@ -195,7 +195,9 @@ DefaultTableModel dtm;
             jTable1.getColumnModel().getColumn(1).setPreferredWidth(130);
         }
 
-        jButton5.setText("jButton5");
+        jButton5.setBackground(new java.awt.Color(83, 153, 225));
+        jButton5.setFont(new java.awt.Font("Comic Sans MS", 0, 11)); // NOI18N
+        jButton5.setText("Confirmar Transacción");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -352,7 +354,11 @@ DefaultTableModel dtm;
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        try {
+        c.con.rollback();
+    } catch (SQLException ex) {
+        Logger.getLogger(EgresoR.class.getName()).log(Level.SEVERE, null, ex);
+    }
         this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -372,9 +378,10 @@ DefaultTableModel dtm;
             String descripcion=jTextArea1.getText();
             String Beneficiario= jTextField1.getText();
             try {
+                c.con.setAutoCommit(false);
                 Integer tipo= 0; //los 0 son egresos
                 double monto= Double.valueOf(jTextField3.getText());
-                Integer cuenta_No=Integer.parseInt(jComboBox1.getSelectedItem().toString());
+                Integer cuenta_No=Integer.parseInt(c.idReporte.get(jComboBox1.getSelectedIndex()-1));
                 Integer servicio_Id=Integer.parseInt(c.listaS.get(jComboBox3.getSelectedIndex()-1));
                 Integer documento_Id=Integer.parseInt(c.lista.get(jComboBox2.getSelectedIndex()-1));
                 Statement stmt= c.con.createStatement();
@@ -431,9 +438,9 @@ DefaultTableModel dtm;
     }
     
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-     if(!"".equals(jComboBox1.getSelectedItem().toString())&&!"Seleccione una clave".equals(jComboBox1.getSelectedItem().toString()))
+     if(!"".equals(c.idReporte.get(jComboBox1.getSelectedIndex()-1))&&!"Seleccione una clave".equals(c.idReporte.get(jComboBox1.getSelectedIndex()-1)))
         {
-            jTextField2.setText(c.BuscarC("cuenta", jComboBox1.getSelectedItem().toString()));
+            jTextField2.setText(c.BuscarC("cuenta", c.idReporte.get(jComboBox1.getSelectedIndex()-1).toString()));
             //jTextArea1.setText(c.BuscarN("cuenta", jTextField2.getText()));
         }
      mostrarCorrelativo();
@@ -469,7 +476,7 @@ DefaultTableModel dtm;
     {
         if(jComboBox1.getSelectedIndex()>0&&jComboBox2.getSelectedIndex()>0)
         {
-            Integer cuenta_No=Integer.parseInt(jComboBox1.getSelectedItem().toString());
+            Integer cuenta_No=Integer.parseInt(c.idReporte.get(jComboBox1.getSelectedIndex()-1));
             Integer documento_Id=Integer.parseInt(c.lista.get(jComboBox2.getSelectedIndex()-1));
             int tipoAux=1;
             String numeroDoc=c.Obt_NumeroDoc(documento_Id,cuenta_No,tipoAux);
@@ -493,7 +500,7 @@ DefaultTableModel dtm;
         }
         if(si==1)
         {
-            if(c.Buscar("cuenta", jComboBox1.getSelectedItem().toString())==false){
+            if(c.Buscar("cuenta", c.idReporte.get(jComboBox1.getSelectedIndex()-1))==false){
                 cero++;
             }
             if(c.Buscar("documento", c.lista.get(jComboBox2.getSelectedIndex()-1))==false){

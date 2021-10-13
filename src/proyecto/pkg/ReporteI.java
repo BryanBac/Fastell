@@ -354,7 +354,7 @@ public ReporteI() {
         {  
            if(jComboBox2.getSelectedIndex()>0)
            {
-               Integer cuenta_No=Integer.parseInt(jComboBox2.getSelectedItem().toString());
+               Integer cuenta_No=Integer.parseInt(c.idReporte.get(jComboBox2.getSelectedIndex()-1));
                 if(contador!=0)
                 {
                     condicionales=condicionales+"AND ";
