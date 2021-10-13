@@ -9,15 +9,11 @@ package proyecto.pkg;
  *
  * @author libreria6
  */
-
-
-//Agregar Codigo a el constructor!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
 public class CuentaR {
      String Nombre;
     String Banco;
     String NoCuenta;
-    
+
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
