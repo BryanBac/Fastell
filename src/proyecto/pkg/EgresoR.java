@@ -385,7 +385,7 @@ DefaultTableModel dtm;
                 Integer servicio_Id=Integer.parseInt(c.listaS.get(jComboBox3.getSelectedIndex()-1));
                 Integer documento_Id=Integer.parseInt(c.lista.get(jComboBox2.getSelectedIndex()-1));
                 Statement stmt= c.con.createStatement();
-                String query= "INSERT INTO transaccion (Monto,Fecha,Tipo,BeneficiarioE,Descripcion,cuenta_No,servicio_Id,documento_Id) values ('"+monto+"','"+fecha+"','"+tipo+"','"+Beneficiario+"','"+descripcion+"','"+cuenta_No+"','"+servicio_Id+"','"+documento_Id+"')";
+                String query= "INSERT INTO transaccion (Monto,Fecha,Tipo,BeneficiarioE,Descripcion,cuenta_No,servicio_Id,documento_Id) values ("+monto+",'"+fecha+"',"+tipo+",'"+Beneficiario+"','"+descripcion+"',"+cuenta_No+","+servicio_Id+","+documento_Id+")";
                 stmt.executeUpdate(query);
             } catch (SQLException ex) {
                 Logger.getLogger(IngresoR.class.getName()).log(Level.SEVERE, null, ex);
